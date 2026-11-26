@@ -1,19 +1,19 @@
 \begin{itemize}
-    \item Собственное вращение на угол $\varphi$ с центром вращения в начале координат: \\ $x' = x \cos \varphi - y \sin \varphi \\ 
+    \item Proper rotation by an angle $\varphi$ with the center of rotation at the origin: \\ $x' = x \cos \varphi - y \sin \varphi \\ 
     y' = x \sin \varphi + y \cos \varphi$
-    \item Расстояние между точками по сфере: 
+    \item Distance between points on a sphere: 
     $L = R \cdot \arccos(\cos \theta_{1} \cdot \cos \theta_{2} + \sin \theta_{1} \cdot \sin \theta_{2} \cdot \cos(\varphi_{1} - \varphi_{2}))$
-    где $\theta$ – широты (от $-\pi$ до $\pi$), $\varphi$ – долготы (от $-\pi$ до $\pi$)
-    \item Объем шарового сегмента: $V = \pi h^{2}(R - \frac{1}{3}h)$, где $h$ -- высота от вершины сектора до секущей плоскости
-    \item Площадь поверхности шарового сегмента: $S = 2\pi Rh$, где $h$ -- высота
-    % \item $2^{23} \cdot 7 \cdot 17 + 1 = 998.244.353$ --- простое, первообразный корень -- $3$
-    \item Код Грея: $g_{n} = n \oplus \frac{n}{2}$
-    \item Числа Фибоначчи: \\ $\displaystyle F_{0} = 0, F_{1} = 1, F_{n} = \frac{(\frac{1 + \sqrt{5}}{2})^{n} - (\frac{1 - \sqrt{5}}{2})^{n}}{\sqrt{5}}$
+    where $\theta$ – latitudes (from $-\pi$ to $\pi$), $\varphi$ – longitudes (from $-\pi$ to $\pi$)
+    \item Volume of a spherical cap: $V = \pi h^{2}(R - \frac{1}{3}h)$, where $h$ -- height from the apex of the sector to the cutting plane
+    \item Surface area of a spherical cap: $S = 2\pi Rh$, where $h$ -- height
+    % \item $2^{23} \cdot 7 \cdot 17 + 1 = 998.244.353$ --- prime, primitive root -- $3$
+    \item Gray code: $g_{n} = n \oplus \frac{n}{2}$
+    \item Fibonacci numbers: \\ $\displaystyle F_{0} = 0, F_{1} = 1, F_{n} = \frac{(\frac{1 + \sqrt{5}}{2})^{n} - (\frac{1 - \sqrt{5}}{2})^{n}}{\sqrt{5}}$
     \item Sum-xor property: $a + b = a \oplus b + 2(a\&b), a + b = a|b + a\&b, a \oplus b = a|b - a\&b$
-    \item Число граней в планарном графе(с учётом бесконечной): $R = 2 - V + E$
-    \item Сумма арифметической прогрессии: $S_{n} = \frac{n(a_{1} + a_{n})}{2}$
-    \item Сумма геометрической прогрессии: $S_{n} = \frac{b_{1}(q^{n} - 1)}{q - 1}$
-    \item Определители матриц
+    \item Number of faces in a planar graph(including the infinite one): $R = 2 - V + E$
+    \item Sum of an arithmetic progression: $S_{n} = \frac{n(a_{1} + a_{n})}{2}$
+    \item Sum of a geometric progression: $S_{n} = \frac{b_{1}(q^{n} - 1)}{q - 1}$
+    \item Determinants of matrices
     $$
     \left|
     \begin{array}{c c}
@@ -31,7 +31,7 @@
     \end{array}
     \right| = a_{1}b_{2}c_{3} + a_{3}b_{1}c_{2} + a_{2}b_{3}c_{1} -\\- a_{3}b_{2}c_{1} - a_{1}b_{3}c_{2} - a_{2}b_{1}c_{3}
     \end{multline*}
-    $\Delta = \sum_{j = 1}^{n} (-1)^{j + 1} \cdot a_{1, j} \cdot \bar{M_{j}^{1}}$, $\bar{M_{j}^{1}}$ --- определитель матрицы, полученной вычеркиванием $1$ строки и $j$ стоблца.
-    \item \textbf{Метод Крамера.} $\det A \neq 0 \implies$ единственное решение. Иначе $0$ или $\infty$.
-    Решения: $\displaystyle x_{i} = \frac{\Delta_{i}}{\Delta}$. В $\Delta_{i}$ столбец коэффициентов при соответствующей неизвестной заменяется столбцом свободных членов системы.
+    $\Delta = \sum_{j = 1}^{n} (-1)^{j + 1} \cdot a_{1, j} \cdot \bar{M_{j}^{1}}$, $\bar{M_{j}^{1}}$ --- determinant of the matrix obtained by deleting row $1$ and column $j$.
+    \item \textbf{Cramer's rule.} $\det A \neq 0 \implies$ unique solution. Otherwise $0$ or $\infty$.
+    Solutions: $\displaystyle x_{i} = \frac{\Delta_{i}}{\Delta}$. In $\Delta_{i}$, the column of coefficients of the corresponding unknown is replaced by the column of constant terms of the system.
 \end{itemize}
