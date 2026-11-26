@@ -9,34 +9,34 @@
 
     \tableofcontents
 
-    \section{Общее}
+    \section{General}
         \input{src/facts}
     
-    \section{Коды}
+    \section{Code}
         
         \subsection{Basic setup}
             \lstinputlisting[language=C++]{src/basic_setup/template.cpp}
 
-        \subsection{Бесполезное}
-            Санитайзеры:
+        \subsection{Useless}
+            Sanitizers:
                 \lstinputlisting[language=C++]{src/basic_setup/sanitize.txt}
             
-            Прагмы:
+            Pragmas:
                 \lstinputlisting[language=C++]{src/basic_setup/pragmas.cpp}
             
-            Встроенный декартач:
+            Built-in treap:
                 \lstinputlisting[language=C++]{src/basic_setup/orderedset.cpp}
                 
             Atomic hashset, hashmap:
                 \lstinputlisting[language=C++]{src/basic_setup/hashmap.cpp}
                 
-            Перебор всех подмасок и надмасок:
+            Iterating over all submasks and supermasks:
                 \lstinputlisting[language=C++]{src/basic_setup/masks.cpp}
     
-        \subsection{Мосты}
+        \subsection{Bridges}
             \lstinputlisting[language=C++]{src/graph/bridges.cpp}
             
-        \subsection{Точки сочленения}
+        \subsection{Articulation points}
             \lstinputlisting[language=C++]{src/graph/cutpoints.cpp}
             
         \subsection{DCP (TheEvilBird)}
@@ -48,113 +48,17 @@
         \subsection{MinCostMaxFlow (TheEvilBird)}
             \lstinputlisting[language=C++]{src/graph/mincost_theevilbird.cpp}
         
-        \subsection{Эйлеров цикл}
+        \subsection{Eulerian cycle}
             \lstinputlisting[language=C++]{src/graph/euler.cpp}
-        \subsection{Кун}
+        \subsection{Kuhn}
             \lstinputlisting[language=C++]{src/graph/kuhn.cpp}
 
-        Вершинное покрытие графа --- множество вершин, что каждое ребро графа инцидентно хотя бы одной вершине из множества.
+        Vertex cover of a graph --- a set of vertices such that every edge of the graph is incident to at least one vertex from the set.
         
-        Пусть $M$ --- макс. парсоч. Мысленно ориентируем ребра графа: ребра из $M$ проведем из правой доли в левую, остальные --- из левой в правую, 
-        после чего запустим обход в глубину из всех вершин левой доли, не включенных в $M$.
-        Граф разбился на несколько множеств: $L^{+}$, $L^{-}$, $R^{+}$, $R^{-}$, где <<плюсовые>> множества --- это множества посещенных в процессе обхода вершин. Тогда $V_{min} = L^{-} \cup R^{+}$.
+        Let $M$ --- max matching. Mentally orient the edges of the graph: direct edges from $M$ from the right part to the left, and the rest --- from the left to the right, 
+        then run a depth-first search from all vertices of the left part not included in $M$.
+        The graph is partitioned into several sets: $L^{+}$, $L^{-}$, $R^{+}$, $R^{-}$, where the ``plus'' sets are the sets of vertices visited during the traversal. Then $V_{min} = L^{-} \cup R^{+}$.
 
-        Независимое множество вершин ---  множество вершин, что никакая пара вершин не соединена ребром. Дополнение минимального вершинного покрытия является максимальным независимым множеством.
+        Independent set of vertices --- a set of vertices such that no pair of vertices is connected by an edge. The complement of a minimum vertex cover is a maximum independent set.
 
-        Покрытие дага путями: $n - matching$
-        
-        \subsection{HLD (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/graph/hld_theevilbird.cpp}
-
-        \subsection{Dominator tree (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/graph/dominator_teb.cpp}
-
-        \subsection{Link-Cut (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/ds/linkcut_theevilbird.cpp}
-        
-        \subsection{Личао (FedShat)}
-            \lstinputlisting[language=C++]{src/geom/lichao_fedshat.cpp}
-            
-        \subsection{Segment Tree (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/ds/segtree_theevilbird.cpp}
-        
-        \subsection{Segment Tree Down (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/ds/segtree_down_theevilbird.cpp}
-        
-        \subsection{Segment Tree Beats (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/ds/segtree_beats_theevilbird.cpp}
-        
-        \subsection{Persistent Segment Tree (Sweezyk)}
-            \lstinputlisting[language=C++]{src/ds/pers_segtree_sweezyk.cpp}
-            
-        \subsection{Fenwick (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/ds/fenwick_theevilbird.cpp}
-        
-        \subsection{Sparse table}
-            \lstinputlisting[language=C++]{src/ds/sparse.cpp}
-        
-        \subsection{Treap (Sweezyk)}
-            \lstinputlisting[language=C++]{src/ds/treap_sweezyk.cpp}
-        
-        \subsection{Extended GCD (Sweezyk)}
-            \lstinputlisting[language=C++]{src/math/ext_gcd_sweezyk.cpp}
-        
-        \subsection{FFT (FedShat)}
-            \lstinputlisting[language=C++]{src/math/fft_fedshat.cpp}
-        
-        % \subsection{КТО (FedShat)}
-            % \lstinputlisting[language=C++]{src/math/kto_fedshat.cpp}
-        
-        \subsection{Обратные по простому модулю}
-            Пусть дан простой модуль $m$. Для каждого числа из $[1, m - 1]$ найти обратное к нему.
-            \lstinputlisting[language=C++]{src/math/rev_from_1_to_mod.cpp}
-        
-        \subsection{Обратные факториалы}
-            \lstinputlisting[language=C++]{src/math/rev_fact.cpp}
-        
-        \subsection{Гаусс}
-            \lstinputlisting[language=C++]{src/math/gauss.cpp}
-            
-            \textbf{Бинарный}
-            \lstinputlisting[language=C++]{src/math/bin_gauss.cpp}
-        
-        \subsection{Быстрая факторизация (FedShat)}
-            \lstinputlisting[language=C++]{src/math/fact_fedshat.cpp}
-
-        \subsection{Префикс-функция}
-            \lstinputlisting[language=C++]{src/string/prefix_func.cpp}
-            
-        \subsection{Z-функция}
-            \lstinputlisting[language=C++]{src/string/z_func.cpp}
-            
-        \subsection{Суфмас (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/string/sufarray_theevilbird.cpp}
-            
-        \subsection{Суфавтомат (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/string/sufavtomat_theevilbird.cpp}
-        
-        \subsection{Ахо-Корасик (Sweezyk)}
-            \lstinputlisting[language=C++]{src/string/korasik_sweezyk.cpp}
-            
-        \subsection{Манакер}
-            \lstinputlisting[language=C++]{src/string/manacher.cpp}
-            
-        \subsection{CHT (FedShat)}
-            \lstinputlisting[language=C++]{src/geom/cht_fedshat.cpp}
-        
-        \subsection{Дебаг Туриста}
-            \lstinputlisting[language=C++]{src/basic_setup/debug.cpp}
-        
-        % \newpage
-        \subsection{Геометрия (TheEvilBird)}
-            \lstinputlisting[language=C++]{src/geom/geom_theevilbird.cpp}
-
-        \subsection{Стрессы (TheEvilBird)}
-            \lstinputlisting[language=Python]{src/stress/generators.py}
-    
-\end{multicols*}
-
-\includepdf{src/table.pdf}
-
-\end{document}
-
+        Path cover of a DAG: $n - matching$
